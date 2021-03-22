@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jazz Standards</title>
+	<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://unpkg.com/intersection-observer"></script>
+	<script src="https://unpkg.com/scrollama"></script>
+</head>
+<style type="text/css">
+	body, html {
+		top:0;
+		left:0;
+		margin:0;
+		font-family:'Helvetica Neue', sans-serif;
+	}
+	nav	{
+		background-color:white;
+		position:fixed;
+		width:100%;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		border-bottom:0.05em solid black;
+		z-index:100;
+	}
+	.title {
+		height:50vh;
+		color:white;
+		background-color:purple;
+/*		background-image:url('https://i.pinimg.com/originals/7f/43/1c/7f431c9e6991b1a83d79e359dc09c99d.gif');*/
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: left top;
+		background-size: auto 100%;
+	}
+	.title h1 {
+		font-size:5em;
+	}
+	.title h2 {
+		font-size:1em;
+		font-weight:400;
+	}
+	.header {
+		text-align:center;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		border:0.3em solid black;
+		padding:5% 0%;
+		animation: fadeIn 0.5s ease-in-out;
+	}
+	.header h1{
+		font-family:'Helvetica Neue', sans-serif;
+		font-weight:800;
+		margin:0;
+	}
+	.header h2 {
+		margin:0;
+	}
+	.sticky {
+		float:right;
+		top:25%;
+		position:sticky;
+		width:50%;
+		display:inline-flex;
+					background-color:white;
+	}
+	.leftside{
+		background-color:black;
+		color:white;
+		width: 30%;
+    	padding: 5% 10% 5% 5%;
+	}
+	.progressive{
+		width:100%;
+		display:block;
+		margin-bottom:100%!important;
+	}
+	.end {
+		margin-bottom:5%!important;
+	}
+	#counter {
+		width:100%;
+		font-size:10em;
+		text-align:center;
+		margin:0;
+		padding:0%;
+		line-height:1em;
+		font-weight: 800;
+    	letter-spacing: -0.05em;
+	}
+	#counter h2{
+		text-align:center;
+	}
+	.text {
+		margin:5%;
+		line-height:2em;
+		opacity:0;
+		margin-top:10%;
+		transition:0.5s ease-in-out;
+	}
+	.text h1 {
+		font-size:4em;
+		letter-spacing:-0.05em;
+		line-height:1em;
+		font-weight:900;
+		width:60%;
+	}
+	.text h2 {
+		font-weight:400;
+		font-size:1em;
+		font-style:italic;
+	}
+	.sticky h1 {
+		width:100%;
+		font-size:3em;
+	}
+	.sticky h2 {
+		font-size:0.8em;
+		text-transform:uppercase;
+		letter-spacing:0.1em;
+	}
+	.center_aligner {
+		overflow:none;
+		width:100%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		margin:2% 0%;
+	}
+	iframe {
+		border:0.3em solid black;
+		width:900px;
+		height:500px;
+	}
+	.tableauPlaceholder{
+		width:50%;
+		z-index:0;
+	}
+	img{
+		text-align:center;
+		margin:0%;
+		display:inline-block;
+		border:0.3em solid black;
+	}
+	.caption {
+		font-size:0.8em;
+		color:#666666;
+	}
+	.small {
+		width:30%;
+	}
+	.large {
+		width:80%;
+		display:block;
+	}
+	@keyframes fadeIn {
+		0%{
+			opacity:0;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	@media screen and (max-width:767px){
+		.sticky {
+	/*		bottom:0;*/
+			width:50%;
+			float:none;
+			margin:auto;
+			display:flex;
+			line-height:2em;
+		}
+		.sticky h1 {
+			font-size:2em;
+			line-height:2em;
+		}
+		.sticky h2 {
+			font-size:0.5em;
+		}
+		#counter {
+			font-size:5em;
+		}
+		.leftside {
+			width: 85%;
+    		padding: 5% 10% 5% 5%;
+		}
+		.small {
+			width:80%;
+		}
+		.title {
+			height:80vh;
+		}
+		.text h1 {
+			font-size:2.5em;
+			width:80%;
+		}
+		.text {
+			margin:10% 5%;
+		}
+		iframe {
+			height:300px;
+		}
+
+	}
+</style>
+<body>
+
+<!-- nav -->
+<nav>
+	<h3>Jazz Standards</h3>
+</nav>
+
+<!-- text -->
+<div class='header title step'>
+	<div class='aligner'>
+		<h1>Jazz Standards: American Treasure</h1>
+		<h2> </h2>	
+	</div>
+	<div class='center_aligner'>
+	<!-- change line 120 if you want to change the size of the image -->
+	<img class='large' src="images/il_fullxfull.2638204083_c8ly.jpg"> 	
+</div>
+</div>
+
+
+<div class='text'>
+	<h2>Jennifer Smith</h2>	
+
+	The terms “standard” and “jazz standard” are often used when one is referring to popular and jazz music compositions and the definitions of these terms can vary widely. So what is a standard? Comparing definitions from a number of dictionaries and music scholars and basing a definition on the points on which they are in agreement, it is reasonable to state: A “standard” is a composition that is held in continuing esteem and is commonly used in musical repertoires. And, A “jazz standard” is a composition that is held in continuing esteem and is commonly used as the basis of jazz arrangements and improvisations. 
+
+Sometimes the term “jazz standard” is used to imply a jazz composition that has become a standard with general acceptance, one that allows compositions from any origin. For example, consider the following sheet music collection titled "Jazz Standards":
+<br>
+<p style="margin-left: 70px">All the Things You Are, Autumn in New York, Bewitched, Cry Me a River, Don’t Get Around Much Anymore, A Fine Romance, I Can’t Get Started With You, I’ve Got You Under My Skin, The Lady Is a Tramp, Manhattan, Misty, My Funny Valentine, Old Devil Moon, Prelude to a Kiss, Route 66, Smoke Gets in Your Eyes, There’s a Small Hotel</p>
+
+
+The majority of these “jazz standards” were not originally jazz compositions. When music publishers include the term “jazz standards” in a description or title they almost always are referring to compositions used as the foundation for jazz arrangements or improvisations, regardless of whether or not they were written by a jazz composer. In general, music authors and theorists also favor this broader definition. 
+</div>
+
+
+<div class='text'>
+	<h1>The Rise and Fall of the Jazz Standard</h1>
+	
+</div>
+
+
+<!-- image 1 -->
+<div class='center_aligner'>
+	<!-- change line 120 if you want to change the size of the image -->
+	<img class='large' src="images/jazz-popularity.png"> 	
+</div>
+<!-- caption for image 1 -->
+<div class='center_aligner'>
+	<div class='caption'>Jazz standards peaked in the two decades between 1927 to 1947. The greatest number composed and recorded are ranked in popularity. The rise of Broadway musicals during this time was the biggest contributor to the popularity of jazz standards.</div>	
+</div>
+
+
+<!-- tableau public -->
+
+
+<!-- interactive embed, adjust the width and height as necessary, copy lines 155 to 157 to create a new interactive embed --> 
+
+<div class='center_aligner'>
+<div class='text'>
+	<h1>Richard Rodgers, #1 Jazz Standards Composer</h1>
+	Richard Charles Rodgers was an American composer, known largely for his work in musical theater. With 43 Broadway musicals and over 900 songs to his credit, Rodgers was one of the most significant American composers of the 20th century, and his compositions had a significant impact on popular music. Lorenz Milton Hart was the lyricist half of the Broadway songwriting team Rodgers and Hart. Some of his more famous lyrics include "Blue Moon", "The Lady Is a Tramp", "Manhattan", "Bewitched, Bothered and Bewildered", and "My Funny Valentine". Here are his compositions over time, with the song ranking (1-1000) appearing on the right.
+</div></div>
+
+
+<div class='tableauPlaceholder' id='viz1616368059314' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;RichardRodgers1Composer&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PopularityofJazzStandardsdashboard&#47;RichardRodgers1Composer' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;RichardRodgers1Composer&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1616368059314');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<div class='center_aligner'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AK8cduf7ESY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+
+
+
+<div class='center_aligner'>
+<div class='text'>
+	<h1>Which composers also wrote the lyrics?</h1>
+	A song is a miniature drama — a short story told to music. The notes may stir the soul, but it's the lyrics that pierce the heart.
+
+The popularity of jazz in its golden age owes much to the great American songbook. Writers such as Hoagy Carmichael, Cole Porter, and Irving Berlin created rich yet refined lyrical dramas. Singers including Sarah Vaughan, Ella Fitzgerald, and Jon Hendricks animated the lyrics and melodies with the improvisational spark of jazz. 
+
+A good lyricist is a poet, encapsulating a feeling in a concise slice of life. Here are fifteen of the top composers and the partner who wrote the lyrics. Irving Berlin was the one composer who exclusively wrote his own lyrics.
+</div></div>
+
+<div class='tableauPlaceholder' id='viz1616374645922' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;ComposersWhoWroteLyrics&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PopularityofJazzStandardsdashboard&#47;ComposersWhoWroteLyrics' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;ComposersWhoWroteLyrics&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1616374645922');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></div>
+
+<div class='text'>
+	<h1>It's All About Me and You</h1>
+	What are common themes in jazz standards? Jazz lyrics speak of the troubles and triumphs of every day life, from sex to money, from cooking to drinking, from infidelity and abuse, to romantic love and sexual conquest. Some of the most common themes, found in the composition's titles, are about me, you, love, and feeling blue.
+
+<div class='tableauPlaceholder' id='viz1616006928368' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;PopularKeywords&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PopularityofJazzStandardsdashboard&#47;PopularKeywords' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PopularityofJazzStandardsdashboard&#47;PopularKeywords&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1616006928368');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+<div class='center_aligner'>
+<div class='text'>
+	<h1>The #1 Jazz Standard of All Time</h1>
+	While in London, Hollywood songwriter/conductor Johnny Green wrote “Body and Soul” for Gertrude Lawrence. Jack Hylton & His Orchestra recorded the ballad first in Britain, but it was Paul Whiteman and His Orchestra (Jack Fulton, vocal) who popularized it. Their recording hit the charts on October 11, 1930, and held the number one spot for six weeks. <p>On October 15th, 1930, “Body and Soul” appeared in the Broadway revue, Three’s a Crowd. The show would run for 272 performances with Libby Holman performing the song as Clifton Webb danced. “Body and Soul” was one of the revue’s standout songs, and Holman’s recording rose to number three on the recording charts.
+
+Although instantly popular, “Body and Soul” was banned from radio for nearly a year because of its suggestive lyrics, which leave little doubt as to their sexual nature. In spite of, or possibly because of, its racy lyrics, an astounding number of renditions made the charts in the 1930s and 1940s
+</div></div>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vf0LOc49fX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_OFMkCeP6ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+// instantiate the scrollama
+const scroller = scrollama();
+const scroller2 = scrollama();
+
+scroller
+  .setup({
+    step: ".text",
+    offset: 0.9,
+  })
+  .onStepEnter(response => {
+    // { element, index, direction }
+    el=response.element;
+    el.style.opacity=1;
+    el.style.marginTop='5%';    
+  })
+  .onStepExit(response => {
+    // { element, index, direction }  
+    el=response.element;
+  })
+  ;
+ // setup resize event
+window.addEventListener("resize", scroller.resize);
+
+scroller2
+  .setup({
+    step: ".progressive",
+    offset: 0.6,
+  })
+  .onStepEnter(response => {
+    // { element, index, direction }
+    el=response.element;
+    el.style.opacity=1;
+    if(response.index==0 || 1 || 2){
+    	stick('dynamic_sticky1')
+    	response.direction=='down'
+    	if(response.index==0){
+    		count(1,16,1,'Energy','after a 15 minute break','dynamic_sticky1')
+    	} else if (response.index==1){
+    		count(1,3.8,.1,'Engagement','average','dynamic_sticky1')
+    	} else if (response.index==2){
+    		count(0,0.9,.1,'Mood','increase','dynamic_sticky1')
+    	}
+    }
+  })
+  .onStepExit(response => {
+    // { element, index, direction }  
+    el=response.element;
+    console.log(response.index)
+    if(response.index==2){
+    	unstick('dynamic_sticky1')
+    }
+    el.style.opacity=0;
+  })
+  ;
+ // setup resize event
+window.addEventListener("resize", scroller2.resize);
+
+function count(number1, number2, step, title, label, location_id, prefix='+', suffix='%'){
+	target = document.querySelector('#'+location_id)
+	console.log(target)
+	let text=number1;
+
+	setInterval(function(){
+		if(text!=number2){
+			num = text+step
+			if(num % 1 == 0){
+				text = num
+			} else {
+				text = parseFloat(num.toFixed(2))
+			}
+			target.innerHTML="<div class='aligner'><h1>"+title+"</h1><div id='counter'>"+prefix+text+suffix+"</div><h2>"+label+"</h2></div>"
+		}
+	}, 30);
+}
+
+function stick(location_id){
+	target = document.querySelector('#'+location_id)
+	target.style.position="sticky"
+}
+
+function unstick(location_id){
+	target = document.querySelector('#'+location_id)
+	target.style.position="relative"
+}
+
+</script>
+
+</html>
